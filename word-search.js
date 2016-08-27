@@ -8,7 +8,7 @@ const readStream = createReadStream('/usr/share/dict/words', { highWaterMark: 10
 
 const [,,...args] = process.argv
 if (process.argv.length !== 3) {
-    process.stdout.write(`You didn't enter a search term!\n`)
+    process.stdout.write(`Usage: 10.js [searchterm]\n`)
 } else {
   const searchTerm = args[0].toLowerCase()
   readStream
