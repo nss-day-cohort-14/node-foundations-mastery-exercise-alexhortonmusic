@@ -8,15 +8,10 @@ const readStream = createReadStream('/usr/share/dict/words', { highWaterMark: 10
 
 const [,,...args] = process.argv
 if (process.argv.length !== 3) {
-  readStream.on('end', () => {
-    console.log(`You didn't use enter a search term`)
-  })
+    process.stdout.write(`You didn't enter a search term!\n`)
 } else {
   const searchTerm = args[0].toLowerCase()
-}
-
-
-readStream
+  readStream
   .pipe(es.split())
   .pipe(es.map((word, cb) => {
     let ind = word.toLowerCase().indexOf(searchTerm);
@@ -27,3 +22,4 @@ readStream
   }))
   .pipe(Limiter)
   .pipe(process.stdout)
+}
