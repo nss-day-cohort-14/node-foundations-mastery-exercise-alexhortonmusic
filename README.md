@@ -12,7 +12,7 @@ the operating system for spell checking. If this file does not exist on your
 system, you can use one from GitHub such as: https://github.com/atebits/Words
 
 Allow an argument to be passed to this program which should be used as a search
-term. The case of the search term should not matter. If no argument is passed,
+term. The case of the search term should not matter. If no arguments passed,
 respond only with a simple [usage message][usage].
 
 Limit the results to only ten words and case should not matter.
